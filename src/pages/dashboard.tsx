@@ -55,7 +55,7 @@ const options: ApexOptions = {
             opacityTo: 0.3
         }
     }
-}
+} 
 
 const series = [
     {name: 'series1', data: [31, 120, 10, 28, 61, 109, 1]}

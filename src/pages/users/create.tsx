@@ -24,7 +24,7 @@ const CreateUserSchema = yup.object().shape({
 
 export default function CreateUser() {
 
-    const { register, handleSubmit, formState:{errors}, formState} = useForm({
+    const { register, handleSubmit, formState:{errors}, formState} = useForm<CreateUserFormData>({
         resolver: yupResolver(CreateUserSchema)
     })
 
@@ -64,14 +64,14 @@ export default function CreateUser() {
                                 name="name" 
                                 label="Nome completo"
                                 {...register('name')}
-                                errors={errors.name}
+                                error={errors.name}
                             />
 
                             <Input 
                                 name="email" 
                                 type="email" 
                                 label="E-mail"
-                                errors={errors.email}
+                                error={errors.email}
                                 {...register('email')}
                             />
                         </SimpleGrid>
@@ -85,14 +85,14 @@ export default function CreateUser() {
                                 name="password" 
                                 type="password" 
                                 label="Senha"
-                                errors={errors.password}
+                                error={errors.password}
                                 {...register('password')}
                             />
                             <Input 
                                 name="password_confirmation"
                                 type="password" 
                                 label="Confirmação da senha"
-                                errors={errors.password_confirmation}
+                                error={errors.password_confirmation}
                                 {...register('password_confirmation')}
                             />
 
